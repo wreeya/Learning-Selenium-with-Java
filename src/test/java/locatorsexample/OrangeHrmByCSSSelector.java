@@ -1,13 +1,11 @@
 package locatorsexample;
-
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.time.Duration;
-
-public class OrangeHrmLogin {
+public class OrangeHrmByCSSSelector {
 
     public static void main(String[] args) {
 
@@ -17,13 +15,15 @@ public class OrangeHrmLogin {
 
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 
-        WebElement userNameField = driver.findElement(By.name("username"));
+        WebElement userNameField = driver.findElement(
+                By.cssSelector("input[placeholder='Username']"));
+        WebElement passwordField = driver.findElement(
+                By.cssSelector("input[name='password']"));
+        WebElement loginButton = driver.findElement(
+                By.cssSelector("button[type='submit']"));
+
         userNameField.sendKeys("Admin");
-
-        WebElement passwordField = driver.findElement(By.name("password"));
         passwordField.sendKeys("admin123");
-
-        WebElement loginButton = driver.findElement(By.tagName("button"));
         loginButton.click();
     }
 }
