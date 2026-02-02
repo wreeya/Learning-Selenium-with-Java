@@ -1,6 +1,7 @@
 package locatorsexample;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -16,16 +17,13 @@ public class OrangeHRMLoginByRelativeXPath {
 
         driver.get("https://opensource-demo.orangehrmlive.com/");
 
-        driver.findElement(
-                By.xpath("//input[@name='username']")
-        ).sendKeys("Admin");
+        WebElement userNameField = driver.findElement(By.xpath("//input[@name='username']"));
+        WebElement passwordField = driver.findElement(By.xpath("//input[@name='password']"));
+        WebElement loginButton = driver.findElement(By.xpath("//button[@type='submit']"));
 
-        driver.findElement(
-                By.xpath("//input[@name='password']")
-        ).sendKeys("admin123");
+        userNameField.sendKeys("Admin");
+        passwordField.sendKeys("admin123");
+        loginButton.click();
 
-        driver.findElement(
-                By.xpath("//button[@type='submit']")
-        ).click();
     }
 }
