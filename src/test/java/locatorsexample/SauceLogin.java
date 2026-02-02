@@ -1,4 +1,4 @@
-package login;
+package locatorsexample;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,8 +14,8 @@ public class SauceLogin {
         WebElement passwordField = driver.findElement(By.id("password"));
         WebElement loginButton = driver.findElement(By.id("login-button"));
 
-        userNameField.sendKeys("Admin");
-        passwordField.sendKeys("admin123");
+        userNameField.sendKeys("standard_user");
+        passwordField.sendKeys("secret_sauce");
         loginButton.click();
     }
 }

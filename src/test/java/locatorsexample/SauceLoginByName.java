@@ -1,4 +1,4 @@
-package login;
+package locatorsexample;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,8 +21,6 @@ public class SauceLoginByName {
 
         userNameField.sendKeys("standard_user");
         passwordField.sendKeys("secret_sauce");
-
-
         loginButton.click();
     }
 }

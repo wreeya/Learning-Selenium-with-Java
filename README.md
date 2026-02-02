@@ -4,7 +4,7 @@ Currently, it contains a simple automation script that:
 - Opens Chrome browser
 - Navigates to SauceDemo website
 - Enters username and password
-- Clicks the login button
+- Clicks the locatorsexample button
 
 Tools used:
 - Java
