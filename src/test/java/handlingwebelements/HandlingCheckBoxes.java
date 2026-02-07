@@ -17,6 +17,12 @@ public class HandlingCheckBoxes {
 
         driver.get("https://testautomationpractice.blogspot.com/");
 
+        /*List<WebElement> daysCheckboxes = driver.findElements(By.xpath("//input[@class='form-check-input' and @type='checkbox']"));
+
+        for (WebElement checkBox : daysCheckboxes) {
+            checkBox.click();
+        }*/
+
         List<WebElement> daysValues = driver.findElements(
                 By.xpath("//label[@class='form-check-label']")
         );
@@ -33,6 +39,9 @@ public class HandlingCheckBoxes {
             }
 
             if (dayValue.equals("Tuesday")) {
+                day.click();
+            }
+            if (dayValue.equals("Thursday")) {
                 day.click();
             }
             if (dayValue.equals("Saturday")) {
