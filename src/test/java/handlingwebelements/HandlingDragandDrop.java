@@ -1,3 +1,4 @@
+
 package handlingwebelements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -5,9 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+
 import java.time.Duration;
 
-public class HandlingDoubleClick {
+public class HandlingDragandDrop {
     public static void main(String[] args) {
 
         WebDriver driver = new ChromeDriver();
@@ -21,10 +23,10 @@ public class HandlingDoubleClick {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
         jse.executeScript("arguments[0].scrollIntoView()", doubleClickText);
 
-        WebElement doubleClickButton = driver.findElement(By.xpath("//button[text()='Copy Text']"));
+        WebElement draggableElement = driver.findElement(By.id("draggable"));
+        WebElement droppableElement = driver.findElement(By.id("droppable"));
 
         Actions act = new Actions(driver);
-        act.doubleClick(doubleClickButton).build().perform();
-
+        act.dragAndDrop(draggableElement, droppableElement).build().perform();
     }
 }
