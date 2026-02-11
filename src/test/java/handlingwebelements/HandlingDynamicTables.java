@@ -26,6 +26,24 @@ public class HandlingDynamicTables {
                 By.xpath("//table[@class='table table-striped']/thead/tr/th")
         );
         System.out.println("The total number of columns: " + numberOfColumns.size());
+
+        for (int row = 1; row <= numberOfRows.size(); row++) {
+            WebElement columnValue = driver.findElement(
+                    By.xpath("//table[@class='table table-striped']/tbody/tr[" + row + "]/td[1]")
+            );
+            if (columnValue.getText().equals("Chrome")) {
+
+                String cpuLoadValue = driver.findElement(
+                        By.xpath("//td[text()='Chrome']/following-sibling::td[contains(text(), '%')]")).getText();
+                String yellowLabelText = driver.findElement(By.id("chrome-cpu")).getText();
+                if (yellowLabelText.contains(cpuLoadValue)) {
+                    System.out.println("The value on both is same and it is: " + cpuLoadValue);
+                }
+
+
+            }
+
+        }
     }
 }
 
